@@ -23,7 +23,7 @@ from source_facebook_marketing.streams.streams import fetch_thumbnail_data_url
 def test_filter_all_statuses(api, mocker, some_config):
     mocker.patch.multiple(FBMarketingStream, __abstractmethods__=set())
     expected = {}
-    assert FBMarketingStream(api=api)._filter_all_statuses() == expected
+    assert FBMarketingStream(api=api, account_ids=some_config["account_ids"])._filter_all_statuses() == expected
 
     expected = {
         "filtering": [
@@ -36,6 +36,7 @@ def test_filter_all_statuses(api, mocker, some_config):
     }
     assert (
         AdSets(
+            account_ids=some_config["account_ids"],
             start_date="",
             end_date="",
             api=api,
@@ -43,8 +44,6 @@ def test_filter_all_statuses(api, mocker, some_config):
         )._filter_all_statuses()
         == expected
     )
-    assert FBMarketingStream(api=api, account_ids=some_config["account_ids"])._filter_all_statuses() == expected
-
 
 @pytest.mark.parametrize(
     "url", ["https://graph.facebook.com", "https://graph.facebook.com?test=123%23%24%25%2A&test2=456", "https://graph.facebook.com?"]

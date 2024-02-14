@@ -163,7 +163,6 @@ class SourceFacebookMarketing(AbstractSource):
             ),
             AdCreatives(
                 api=api,
-                filter_statuses=config.adcreative_statuses,
                 account_ids=config.account_ids,
                 fetch_thumbnail_images=config.fetch_thumbnail_images,
                 page_size=config.page_size,

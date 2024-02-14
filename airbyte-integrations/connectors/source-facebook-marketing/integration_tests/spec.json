@@ -52,7 +52,7 @@
       },
       "campaign_statuses": {
         "title": "Campaign Statuses",
-        "description": "Select statuses you want to to be loaded in the stream. All means all available.",
+        "description": "Select the statuses you want to be loaded in the stream. If no specific statuses are selected, the API's default behavior applies, and some statuses may be filtered out.",
         "default": [],
         "order": 4,
         "type": "array",
@@ -72,7 +72,7 @@
       },
       "adset_statuses": {
         "title": "AdSet Statuses",
-        "description": "Select statuses you want to to be loaded in the stream. All means all available.",
+        "description": "Select the statuses you want to be loaded in the stream. If no specific statuses are selected, the API's default behavior applies, and some statuses may be filtered out.",
         "default": [],
         "order": 5,
         "type": "array",
@@ -93,7 +93,7 @@
       },
       "ad_statuses": {
         "title": "Ad Statuses",
-        "description": "Select statuses you want to to be loaded in the stream. All means all available.",
+        "description": "Select the statuses you want to be loaded in the stream. If no specific statuses are selected, the API's default behavior applies, and some statuses may be filtered out.",
         "default": [],
         "order": 6,
         "type": "array",

@@ -175,7 +175,7 @@ class AdsInsights(FBMarketingIncrementalStream):
         # if the time increment configured for this stream is different from the one in the previous state
         # then the previous state object is invalid and we should start replicating data from scratch
         # to achieve this, we skip setting the state
-        transformed_state = self._transform_state_from_old_format(value, ["time_increment"])
+        transformed_state = self._transform_state_from_one_account_format(value, ["time_increment"])
         if transformed_state.get("time_increment", 1) != self.time_increment:
             logger.info(f"Ignoring bookmark for {self.name} because of different `time_increment` option.")
             return
