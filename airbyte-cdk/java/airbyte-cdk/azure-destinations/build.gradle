@@ -1,6 +1,22 @@
+java {
+    // TODO: rewrite code to avoid javac wornings in the first place
+    compileJava {
+        options.compilerArgs += "-Xlint:-try,-deprecation"
+    }
+    compileTestFixturesJava {
+        options.compilerArgs += "-Xlint:-deprecation"
+    }
+}
+
 dependencies {
     implementation project(':airbyte-cdk:java:airbyte-cdk:dependencies')
     implementation project(':airbyte-cdk:java:airbyte-cdk:core')
+    implementation project(':airbyte-cdk:java:airbyte-cdk:db-destinations')
 
-    implementation 'com.azure:azure-storage-blob:12.12.0'
+    api 'com.azure:azure-storage-blob:12.25.1'
+
+    testFixturesApi project(':airbyte-cdk:java:airbyte-cdk:db-destinations')
+    testFixturesApi testFixtures(project(':airbyte-cdk:java:airbyte-cdk:db-destinations'))
+
+    testFixturesApi 'org.testcontainers:testcontainers:1.19.4'
 }

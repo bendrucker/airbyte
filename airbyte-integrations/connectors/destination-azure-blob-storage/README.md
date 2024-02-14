@@ -31,6 +31,6 @@ As a community contributor, you will need access to Azure to run the integration
 - Add a new enum in `AzureBlobStorageFormat'.
 - Modify `spec.json` to specify the configuration of this new format.
 - Update `AzureBlobStorageFormatConfigs` to be able to construct a config for this new format.
-- Create a new package under `io.airbyte.integrations.destination.azure_blob_storage`.
+- Create a new package under `io.airbyte.integrations.destination.azure`.
 - Implement a new `AzureBlobStorageWriter`. The implementation can extend `BaseAzureBlobStorageWriter`.
 - Write an acceptance test for the new output format. The test can extend `AzureBlobStorageDestinationAcceptanceTest`.
